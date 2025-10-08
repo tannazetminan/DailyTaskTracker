@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default Android Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Professional Modern Theme (Blue/Gray - Clean & Minimal) -->
+    <color name="primary">#1E40AF</color> <!-- Professional Blue -->
+    <color name="primary_dark">#1E3A8A</color> <!-- Dark Blue -->
+    <color name="primary_light">#3B82F6</color> <!-- Light Blue -->
+
+    <color name="accent">#0EA5E9</color> <!-- Sky Blue (subtle accent) -->
+    <color name="accent_light">#38BDF8</color> <!-- Light Sky Blue -->
+
+    <color name="background">#F8FAFC</color> <!-- Very Light Gray -->
+    <color name="surface">#FFFFFF</color> <!-- Pure White -->
+    <color name="surface_variant">#F1F5F9</color> <!-- Light Gray Surface -->
+
+    <color name="text_primary">#1E293B</color> <!-- Dark Slate -->
+    <color name="text_secondary">#64748B</color> <!-- Medium Gray -->
+    <color name="text_tertiary">#94A3B8</color> <!-- Light Gray -->
+
+    <color name="immediate_task">#F59E0B</color> <!-- Amber/Gold -->
+    <color name="completed">#10B981</color> <!-- Green (success) -->
+    <color name="overdue">#EF4444</color> <!-- Red (warning) -->
+
+    <color name="divider">#E2E8F0</color> <!-- Light Border Gray -->
+
+    <!-- Task Duration Colors (Subtle) -->
+    <color name="duration_short">#3B82F6</color> <!-- Blue -->
+    <color name="duration_medium">#8B5CF6</color> <!-- Purple -->
+    <color name="duration_long">#F59E0B</color> <!-- Amber -->
+</resources>
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<resources>-->
+<!--    &lt;!&ndash; Default Android Colors &ndash;&gt;-->
+<!--    <color name="purple_200">#FFBB86FC</color>-->
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
+<!--    <color name="teal_200">#FF03DAC5</color>-->
+<!--    <color name="teal_700">#FF018786</color>-->
+<!--    <color name="black">#FF000000</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+
+<!--    &lt;!&ndash; Modern Trending Palette (Purple/Pink Gradient Theme) &ndash;&gt;-->
+<!--    <color name="primary">#7C3AED</color> &lt;!&ndash; Vibrant Purple &ndash;&gt;-->
+<!--    <color name="primary_dark">#5B21B6</color> &lt;!&ndash; Deep Purple &ndash;&gt;-->
+<!--    <color name="primary_light">#A78BFA</color> &lt;!&ndash; Light Purple &ndash;&gt;-->
+<!--    <color name="accent">#EC4899</color> &lt;!&ndash; Hot Pink &ndash;&gt;-->
+<!--    <color name="accent_light">#F9A8D4</color> &lt;!&ndash; Light Pink &ndash;&gt;-->
+<!--    <color name="background">#FAF5FF</color> &lt;!&ndash; Very Light Purple &ndash;&gt;-->
+<!--    <color name="surface">#FFFFFF</color>-->
+<!--    <color name="surface_variant">#F3E8FF</color> &lt;!&ndash; Light Purple Surface &ndash;&gt;-->
+<!--    <color name="text_primary">#1E0E4D</color> &lt;!&ndash; Deep Purple Text &ndash;&gt;-->
+<!--    <color name="text_secondary">#6B5B95</color> &lt;!&ndash; Medium Purple Text &ndash;&gt;-->
+<!--    <color name="immediate_task">#F97316</color> &lt;!&ndash; Orange for urgency &ndash;&gt;-->
+<!--    <color name="completed">#10B981</color> &lt;!&ndash; Green &ndash;&gt;-->
+<!--    <color name="overdue">#EF4444</color> &lt;!&ndash; Red &ndash;&gt;-->
+<!--    <color name="divider">#E9D5FF</color> &lt;!&ndash; Light Purple Divider &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Task Duration Colors &ndash;&gt;-->
+<!--    <color name="duration_short">#8B5CF6</color> &lt;!&ndash; 0-30 min &ndash;&gt;-->
+<!--    <color name="duration_medium">#EC4899</color> &lt;!&ndash; 30-60 min &ndash;&gt;-->
+<!--    <color name="duration_long">#F97316</color> &lt;!&ndash; 60+ min &ndash;&gt;-->
+<!--</resources>-->

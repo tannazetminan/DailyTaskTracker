@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Progress Bar at top -->
+        <ProgressBar
+            android:id="@+id/taskProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:progressTint="@color/accent"
+            android:progressBackgroundTint="@color/divider"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Color indicator strip -->
+            <View
+                android:id="@+id/colorIndicator"
+                android:layout_width="4dp"
+                android:layout_height="60dp"
+                android:background="@color/primary"
+                android:layout_marginEnd="12dp"/>
+
+            <!-- Checkbox for completion -->
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/taskCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_marginEnd="8dp"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Title and Priority Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/taskTitle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Task Title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp" />
+
+                    <!-- Priority indicator -->
+                    <ImageView
+                        android:id="@+id/priorityIndicator"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/ic_priority_high"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/taskDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="Task Description"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <!-- Duration badge -->
+                    <TextView
+                        android:id="@+id/taskDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/duration_badge"
+                        android:paddingHorizontal="8dp"
+                        android:paddingVertical="2dp"
+                        android:text="30 min"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+
+                    <!-- Time status -->
+                    <TextView
+                        android:id="@+id/taskTimeStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Due: 2:00 PM"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Tracking info layout - NEW -->
+                <LinearLayout
+                    android:id="@+id/trackingInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/trackingTimeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tracking: 15m / 30m"
+                        android:textColor="@color/accent"
+                        android:textSize="11sp"
+                        android:textStyle="italic"/>
+                </LinearLayout>
+
+                <!-- Scheduled date if different -->
+                <TextView
+                    android:id="@+id/taskScheduledDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Scheduled: Tomorrow"
+                    android:textColor="@color/accent"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Action buttons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <!-- Play/Pause button for time tracking -->
+                <ImageButton
+                    android:id="@+id/playPauseButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_play"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="centerInside"
+                    android:padding="6dp"
+                    android:tint="@color/accent"/>
+
+                <!-- Star button -->
+                <ImageButton
+                    android:id="@+id/immediateButton"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_star_outline"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="centerInside"
+                    android:padding="6dp"/>
+            </LinearLayout>
+
+            <!-- More options -->
+            <ImageButton
+                android:id="@+id/moreButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_more_vert"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                android:padding="6dp"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.cardview.widget.CardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginHorizontal="16dp"-->
+<!--    android:layout_marginVertical="8dp"-->
+<!--    app:cardCornerRadius="16dp"-->
+<!--    app:cardElevation="4dp">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+
+<!--        &lt;!&ndash; Progress Bar at top &ndash;&gt;-->
+<!--        <ProgressBar-->
+<!--            android:id="@+id/taskProgress"-->
+<!--            style="?android:attr/progressBarStyleHorizontal"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="3dp"-->
+<!--            android:progressTint="@color/accent"-->
+<!--            android:progressBackgroundTint="@color/divider"-->
+<!--            android:max="100"-->
+<!--            android:progress="0"-->
+<!--            android:visibility="gone"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:padding="16dp"-->
+<!--            android:gravity="center_vertical">-->
+
+<!--            &lt;!&ndash; Color indicator strip &ndash;&gt;-->
+<!--            <View-->
+<!--                android:id="@+id/colorIndicator"-->
+<!--                android:layout_width="4dp"-->
+<!--                android:layout_height="60dp"-->
+<!--                android:background="@color/primary"-->
+<!--                android:layout_marginEnd="12dp"/>-->
+
+<!--            &lt;!&ndash; Checkbox for completion &ndash;&gt;-->
+<!--            <com.google.android.material.checkbox.MaterialCheckBox-->
+<!--                android:id="@+id/taskCheckbox"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:minWidth="0dp"-->
+<!--                android:minHeight="0dp"-->
+<!--                android:layout_marginEnd="8dp"/>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="181dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/taskTitle"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="sans-serif-medium"-->
+<!--                    android:text="Task Title"-->
+<!--                    android:textColor="@color/text_primary"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/taskDescription"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="sans-serif"-->
+<!--                    android:text="Task Description"-->
+<!--                    android:textColor="@color/text_primary"-->
+<!--                    android:textSize="10sp" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    &lt;!&ndash; Duration badge &ndash;&gt;-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/taskDuration"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/duration_badge"-->
+<!--                        android:paddingHorizontal="8dp"-->
+<!--                        android:paddingVertical="2dp"-->
+<!--                        android:text="30 min"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="11sp" />-->
+
+<!--                    &lt;!&ndash; Time status &ndash;&gt;-->
+<!--                    <TextView-->
+<!--                        android:id="@+id/taskTimeStatus"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="8dp"-->
+<!--                        android:text="Due: 2:00 PM"-->
+<!--                        android:textColor="@color/text_secondary"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
+
+<!--                &lt;!&ndash; Scheduled date if different &ndash;&gt;-->
+<!--                <TextView-->
+<!--                    android:id="@+id/taskScheduledDate"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="2dp"-->
+<!--                    android:text="Scheduled: Tomorrow"-->
+<!--                    android:textColor="@color/accent"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:visibility="gone" />-->
+<!--            </LinearLayout>-->
+
+<!--            &lt;!&ndash; Action buttons &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:gravity="center">-->
+
+<!--                &lt;!&ndash; Play/Pause button for time tracking &ndash;&gt;-->
+<!--                <ImageButton-->
+<!--                    android:id="@+id/playPauseButton"-->
+<!--                    android:layout_width="36dp"-->
+<!--                    android:layout_height="36dp"-->
+<!--                    android:src="@drawable/ic_play"-->
+<!--                    android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:padding="6dp"-->
+<!--                    android:tint="@color/accent"/>-->
+
+<!--                &lt;!&ndash; Star button &ndash;&gt;-->
+<!--                <ImageButton-->
+<!--                    android:id="@+id/immediateButton"-->
+<!--                    android:layout_width="36dp"-->
+<!--                    android:layout_height="36dp"-->
+<!--                    android:src="@drawable/ic_star_outline"-->
+<!--                    android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:padding="6dp"/>-->
+<!--            </LinearLayout>-->
+
+<!--            &lt;!&ndash; More options &ndash;&gt;-->
+<!--            <ImageButton-->
+<!--                android:id="@+id/moreButton"-->
+<!--                android:layout_width="36dp"-->
+<!--                android:layout_height="36dp"-->
+<!--                android:src="@drawable/ic_more_vert"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:padding="6dp"-->
+<!--                android:layout_marginStart="4dp"/>-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+<!--</androidx.cardview.widget.CardView>-->
